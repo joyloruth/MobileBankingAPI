@@ -1,3 +1,4 @@
+import java.sql.Connection;
 import java.sql.Savepoint;
 
 public class Postgress<ConnectionUtil> {
@@ -20,17 +21,17 @@ public class Postgress<ConnectionUtil> {
     }
 
     @Override
-    public void createGuest(Guest guest) {
+    public void createAccount(User user) {
 
-        String sql = "insert into guest (guest_first_name, guest_last_name, phone_number, payment) "
+        String sql = "insert into guest (firstName, lastName, ssn, account) "
                 + "values('"
-                + guest.getName().split(" ")[0]
+                + user.getFirstName()
                 + "', '"
-                + guest.getName().split(" ")[1]
+                + user.userLastName()
                 + "', '"
-                + guest.getPhoneNumber()
+                + user.getssn()
                 + "', "
-                + guest.getPayment()
+                + user.getintialpayment()
                 + ")";
 
         try (Connection conn = connUtil.createConnection()) {

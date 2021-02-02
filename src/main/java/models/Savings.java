@@ -1,11 +1,11 @@
+package models;
+
+public class Savings extends Accounts{
 
 
-public class SavingsAccount extends Account{
+    //private static String accountType =  "Savings";
 
-
-    private static String accountType =  "Savings";
-
-    public SavingsAccount(double initialDeposit) {
+    public Savings(double initialDeposit) {
         super();
         this.setBalance(initialDeposit);
 

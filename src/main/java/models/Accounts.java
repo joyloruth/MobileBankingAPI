@@ -1,22 +1,23 @@
+package models;
 
 
-public class Account {
+public class Accounts {
 
     private static double balance;
-    //public double balance;
+    
+    public int accountId;
+    public static int accountNumber = 0;
+    
+    public double amount;
     public double interest;
 
-    private int accountId;
-    private static int accountNumberBank = 370000370;
-    private double amount;
 
 
-
-    Account() {
-        accountId = accountNumberBank++;
-
-
+    public int getAccountNumber() {
+        accountId = accountNumber++;
+        return accountId;
     }
+    
 
     public double getInterest() {
         return interest;
@@ -32,7 +33,7 @@ public class Account {
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
+        Accounts.balance = balance;
     }
 
     public int getAccountId() {
@@ -48,7 +49,7 @@ public class Account {
             System.out.println("Invalid Entry. Please enter an amount greater than $0.");
         } else {
             balance += amount;
-            System.out.println("You have successfully withdrawn $" + balance + ".");
+            System.out.println("You have successfully deposited $" + balance + ".");
         }
             }
 
